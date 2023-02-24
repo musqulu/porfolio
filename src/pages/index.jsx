@@ -195,9 +195,8 @@ function Resume() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
+                aria-label={`${role.start.label ?? role.start} until ${role.end.label ?? role.end
+                  }`}
               >
                 <time dateTime={role.start.dateTime ?? role.start}>
                   {role.start.label ?? role.start}
@@ -251,23 +250,21 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Spencer Sharp - Software designer, founder, and amateur astronaut
+          Konrad Galan - Product designer, indie hacker and maker
         </title>
         <meta
           name="description"
-          content="I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms."
+          content="I’m Konrad, a Product designer and entrepreneur. I’m the founder of Dimensional AI, where we build tools that empower regular people to become financially independent."
         />
       </Head>
       <Container className="mt-9">
-        <div className="max-w-2xl">
+        <div className="max-w-9xl mx-auto">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software designer, founder, and amateur astronaut.
+            Product designer, indie hacker and maker.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I’m Konrad, a product designer and entrepreneur currently nomading. I’m the founder of Dimension AI, where we build tools
+            that empower regular people to become financially independent.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
