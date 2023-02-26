@@ -12,6 +12,10 @@ import {
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
+import logoHousecallpro from '@/images/logos/housecallpro.svg'
+import logoNeurosphere from '@/images/logos/neurosphere.svg'
+import logoUltimo from '@/images/logos/ultimo.svg'
+
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
@@ -139,35 +143,38 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Housecall Pro',
+      title: 'Product Designer',
+      logo: logoHousecallpro,
+      start: 'May 2022',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
+      company: 'Freelance',
+      title: 'Designer & Developer',
       logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      start: '2013',
+      end: {
+        label: 'Present',
+        dateTime: new Date().getFullYear(),
+      },
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: 'Neurosphere',
+      title: 'Senior Product Designer',
+      logo: logoNeurosphere,
+      start: 'April 2019',
+      end: 'May 2022',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Ultimo.studio',
+      title: 'Product Designer',
+      logo: logoUltimo,
+      start: 'Mar 2016',
+      end: 'Dec 2017',
     },
   ]
 
