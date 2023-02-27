@@ -103,6 +103,8 @@ function Article({ article }) {
   )
 }
 
+
+
 function SocialLink({ icon: Icon, ...props }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
@@ -328,3 +330,5 @@ export async function getStaticProps() {
     },
   }
 }
+
+
