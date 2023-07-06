@@ -42,10 +42,10 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Spencer Sharp</title>
+        <title>About - Konrad Galan</title>
         <meta
           name="description"
-          content="I’m Spencer Sharp. I live in New York City, where I design the future."
+          content="Hey I'm Konrad. I live in the mountains, nature, travelling and building products."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -62,23 +62,23 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Hey I'm Konrad. I live in the mountains, <span className="text-red-500">love </span>nature, travelling and building products.
+              Hey I am Konrad. I live in the mountains, <span className="text-red-500">love </span>nature, travelling and building products.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I've always loved computers and anything related to it. Since I was a kid I was always tinkering with computers and trying to learn as much as I could about them.
+                I have always loved computers and anything related to it. Since I was a kid I was always tinkering with computers and trying to learn as much as I could about them.
               </p>
               <p>
-                I've been always a curious person. That took me places all around the world and gave me a new perspective. I use that perspective to build products that are useful and solve real problems. I put users first, but make enough space for business goals.
+                I have been always a curious person. That took me places all around the world and gave me a new perspective. I use that perspective to build products that are useful and solve real problems. I put users first, but make enough space for business goals.
               </p>
               <p>
-                I'm easy to work with, communicative and always look for ways to improve myself and my craft. If not designing I might be tinkering with some new technology. I'm a big believer in learning by doing and I'm always looking for new challenges.
+                I am easy to work with, communicative and always look for ways to improve myself and my craft. If not designing I might be tinkering with some new technology. I'm a big believer in learning by doing and I am always looking for new challenges.
               </p>
               <p>
-                When not working I'm probably hiking in the mountains, travelling or taking photos. I have big entepreneurial aspirations and I'm building my own things 1% at a time. 
+                When not working I am probably hiking in the mountains, travelling or taking photos. I have big entepreneurial aspirations and I am building my own things 1% at a time. 
               </p>
               <p>
-                I'm trying to live a healthy and sustainable life where I'm helpful to others.
+                I am trying to live a healthy and sustainable life where I am helpful to others.
               </p>
             </div>
           </div>
