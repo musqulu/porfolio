@@ -28,8 +28,7 @@ export function Footer() {
                 <NavLink href="/uses">Uses</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Spencer Sharp. All rights
-                reserved.
+                 Have a great day ❤️ &copy;{new Date().getFullYear()}
               </p>
             </div>
           </Container.Inner>
