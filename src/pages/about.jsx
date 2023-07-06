@@ -61,9 +61,10 @@ export default function About() {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Hey I am Konrad. I live in the mountains, <span className="text-red-500">love </span>nature, travelling and building products.
-            </h1>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+    Hey I am Konrad. I live in the mountains, <span className="text-red-500">love </span>nature, travelling and building products.
+</h1>
+
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 I have always loved computers and anything related to it. Since I was a kid I was always tinkering with computers and trying to learn as much as I could about them.
