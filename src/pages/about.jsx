@@ -73,7 +73,7 @@ export default function About() {
                 I have been always a curious person. That took me places all around the world and gave me a new perspective. I use that perspective to build products that are useful and solve real problems. I put users first, but make enough space for business goals.
               </p>
               <p>
-                I am easy to work with, communicative and always look for ways to improve myself and my craft. If not designing I might be tinkering with some new technology. I'm a big believer in learning by doing and I am always looking for new challenges.
+                I am easy to work with, communicative and always look for ways to improve myself and my craft. If not designing I might be tinkering with some new technology. I am a big believer in learning by doing and always looking for new challenges.
               </p>
               <p>
                 When not working I am probably hiking in the mountains, travelling or taking photos. I have big entepreneurial aspirations and I am building my own things 1% at a time. 
