@@ -334,7 +334,7 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-9xl mx-auto">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Full-stack product designer experienced in crafting digital products from scratch.
+            Full-stack product designer crafting simple yet beautiful digital products.
           </h1>
           <div className="mt-6 flex gap-6">
             <SocialLink
