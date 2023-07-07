@@ -79,8 +79,9 @@ export default function About() {
                 When not working I am probably hiking in the mountains, travelling or taking photos. I have big entepreneurial aspirations and I am building my own things 1% at a time. 
               </p>
               <p>
-                I am trying to live a healthy and sustainable life where I am helpful to others.
-              </p>
+  I&apos;m trying to live a healthy and sustainable life where I am helpful to others.
+</p>
+
             </div>
           </div>
           <div className="lg:pl-20">
