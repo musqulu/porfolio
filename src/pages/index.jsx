@@ -134,7 +134,7 @@ function Newsletter() {
         <span className="ml-3">Stay up to date</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Subscribe to my biweekly-ish newsletter.
+        Subscribe to my newsletter. Just interesting stuff.
       </p>
       <div className="mt-6 flex">
         <input
@@ -266,39 +266,41 @@ function Photos() {
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Movie Avatars',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      'Transform your photos into movie-inspired ai avatars.',
+    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+    internal: false, // External link
     logo: logoPlanetaria,
   },
   {
-    name: 'Animaginary',
+    name: 'HCP Online Booking',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'Book services online tailored for home service businesses.',
+    link: { href: '/studies/online-booking', label: 'Case Study' },
+    internal: true, // External link
+    logo: logoPlanetaria,
   },
   {
-    name: 'HelioStream',
+    name: 'Neurosphere',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'Neurofeedback based meditation training for improved well-being.',
+    link: { href: 'http://neurosphere.io', label: 'neurosphere.io', target: '_blank' },
+    logo: logoNeurosphere,
   },
   {
-    name: 'cosmOS',
+    name: 'Hikerstash',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'Transform your photos into movie-inspired ai avatars.',
+    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+    logo: logoPlanetaria,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Uid8',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'Transform your photos into movie-inspired ai avatars.',
+    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+    logo: logoPlanetaria,
   },
 ]
 
@@ -367,7 +369,7 @@ export default function Home({ articles }) {
       <Photos />
 
       <SimpleLayout
-        title="Projects"
+        title="Portfolio"
       >
         <ul
           role="list"
@@ -384,10 +386,11 @@ export default function Home({ articles }) {
                 />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
+                <Card.Link href={project.link.href} target={project.internal ? undefined : "_blank"}
+                  rel={project.internal ? undefined : "noopener noreferrer"}>{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-red-500 dark:text-zinc-200">
                 <LinkIcon className="h-6 w-6 flex-none" />
                 <span className="ml-2">{project.link.label}</span>
               </p>
