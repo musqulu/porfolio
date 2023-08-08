@@ -18,9 +18,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
       <Link
         href={href}
         target="_blank"
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-red-500 dark:text-zinc-200 dark:hover:text-red-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-red-400 dark:text-zinc-200 dark:hover:text-red-400"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-red-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-red-400" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -61,9 +61,9 @@ export default function About() {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-    Hey I am Konrad. I live in the mountains, <span className="text-red-500">love </span>nature, travelling and building products.
-</h1>
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+              Hey I am Konrad. I live in the mountains, <span className="text-red-400">love </span>nature, travelling and building products.
+            </h1>
 
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
@@ -76,11 +76,11 @@ export default function About() {
                 I am easy to work with, communicative and always look for ways to improve myself and my craft. If not designing I might be tinkering with some new technology. I am a big believer in learning by doing and always looking for new challenges.
               </p>
               <p>
-                When not working I am probably hiking in the mountains, travelling or taking photos. I have big entepreneurial aspirations and I am building my own things 1% at a time. 
+                When not working I am probably hiking in the mountains, travelling or taking photos. I have big entepreneurial aspirations and I am building my own things 1% at a time.
               </p>
               <p>
-  I&apos;m trying to live a healthy and sustainable life where I am helpful to others.
-</p>
+                I&apos;m trying to live a healthy and sustainable life where I am helpful to others.
+              </p>
 
             </div>
           </div>

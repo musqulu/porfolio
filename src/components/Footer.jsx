@@ -6,7 +6,7 @@ function NavLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="transition hover:text-red-500 dark:hover:text-red-400"
+      className="transition hover:text-red-400 dark:hover:text-red-400"
     >
       {children}
     </Link>
@@ -28,7 +28,7 @@ export function Footer() {
                 <NavLink href="/uses">Uses</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                 Have a great day ❤️ &copy;{new Date().getFullYear()}
+                Have a great day ❤️ &copy;{new Date().getFullYear()}
               </p>
             </div>
           </Container.Inner>
