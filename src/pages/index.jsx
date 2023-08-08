@@ -123,34 +123,34 @@ function SocialLink({ icon: Icon, ...props }) {
   )
 }
 
-function Newsletter() {
-  return (
-    <form
-      action="/thank-you"
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-    >
-      <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
-      </h2>
-      <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Subscribe to my newsletter. Just interesting stuff.
-      </p>
-      <div className="mt-6 flex">
-        <input
-          type="email"
-          placeholder="Email address"
-          aria-label="Email address"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-red-400 dark:focus:ring-red-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
-        </Button>
-      </div>
-    </form>
-  )
-}
+// function Newsletter() {
+//   return (
+//     <form
+//       action="/thank-you"
+//       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+//     >
+//       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+//         <MailIcon className="h-6 w-6 flex-none" />
+//         <span className="ml-3">Stay up to date</span>
+//       </h2>
+//       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+//         Subscribe to my newsletter. Just interesting stuff.
+//       </p>
+//       <div className="mt-6 flex">
+//         <input
+//           type="email"
+//           placeholder="Email address"
+//           aria-label="Email address"
+//           required
+//           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-red-500 focus:outline-none focus:ring-4 focus:ring-red-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-red-400 dark:focus:ring-red-400/10 sm:text-sm"
+//         />
+//         <Button type="submit" className="ml-4 flex-none">
+//           Join
+//         </Button>
+//       </div>
+//     </form>
+//   )
+// }
 
 function Resume() {
   let resume = [
@@ -269,16 +269,16 @@ const projects = [
     name: 'Movie Avatars',
     description:
       'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
-    internal: false, // External link
+    link: { href: 'https://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+    internal: false,
     logo: logoPlanetaria,
   },
   {
     name: 'HCP Online Booking',
     description:
       'Book services online tailored for home service businesses.',
-    link: { href: '/studies/online-booking', label: 'Case Study' },
-    internal: true, // External link
+    link: { href: 'https://www.housecallpro.com/', label: 'Case Study' },
+    internal: false,
     logo: logoPlanetaria,
   },
   {
@@ -286,20 +286,23 @@ const projects = [
     description:
       'Neurofeedback based meditation training for improved well-being.',
     link: { href: 'http://neurosphere.io', label: 'neurosphere.io', target: '_blank' },
+    internal: false,
     logo: logoNeurosphere,
   },
   {
     name: 'Hikerstash',
     description:
-      'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+      'Manage, share & create best hiking setup.',
+    link: { href: 'http://hikerstash.com', label: 'hikerstash.com', target: '_blank' },
+    internal: false,
     logo: logoPlanetaria,
   },
   {
     name: 'Uid8',
     description:
-      'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+      'Low-fi design ipad app to quickly validate ideas and mock prototypes.',
+    link: { href: '#', label: 'Discontinued', target: '_blank' },
+    internal: true,
     logo: logoPlanetaria,
   },
 ]
@@ -408,7 +411,7 @@ export default function Home({ articles }) {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> - uncomment this when newsletter will be ready*/}
             <Resume />
           </div>
         </div>

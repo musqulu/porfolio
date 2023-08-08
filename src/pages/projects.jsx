@@ -8,45 +8,50 @@ import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoNeurosphere from '@/images/logos/neurosphere.svg'
 
 const projects = [
   {
     name: 'Movie Avatars',
     description:
       'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+    link: { href: 'https://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+    internal: false,
     logo: logoPlanetaria,
   },
   {
-    name: 'Movie Avatars',
+    name: 'HCP Online Booking',
     description:
-      'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+      'Book services online tailored for home service businesses.',
+    link: { href: 'https://www.housecallpro.com/', label: 'Case Study' },
+    internal: false,
     logo: logoPlanetaria,
   },
   {
-    name: 'Movie Avatars',
+    name: 'Neurosphere',
     description:
-      'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+      'Neurofeedback based meditation training for improved well-being.',
+    link: { href: 'http://neurosphere.io', label: 'neurosphere.io', target: '_blank' },
+    internal: false,
+    logo: logoNeurosphere,
+  },
+  {
+    name: 'Hikerstash',
+    description:
+      'Manage, share & create best hiking setup.',
+    link: { href: 'http://hikerstash.com', label: 'hikerstash.com', target: '_blank' },
+    internal: false,
     logo: logoPlanetaria,
   },
   {
-    name: 'Movie Avatars',
+    name: 'Uid8',
     description:
-      'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
-    logo: logoPlanetaria,
-  },
-  {
-    name: 'Movie Avatars',
-    description:
-      'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'http://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
+      'Low-fi design ipad app to quickly validate ideas and mock prototypes.',
+    link: { href: '#', label: 'Discontinued', target: '_blank' },
+    internal: true,
     logo: logoPlanetaria,
   },
 ]
-
 function LinkIcon(props) {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
@@ -87,7 +92,8 @@ export default function Projects() {
                 />
               </div>
               <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href} target="_blank" rel="noopener noreferrer">{project.name}</Card.Link>
+                <Card.Link href={project.link.href} target={project.internal ? undefined : "_blank"}
+                  rel={project.internal ? undefined : "noopener noreferrer"}>{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
               <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-red-400 dark:text-zinc-200">
