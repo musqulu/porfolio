@@ -3,12 +3,9 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 import logoNeurosphere from '@/images/logos/neurosphere.svg'
+import logoHousecallpro from '@/images/logos/housecallpro.svg'
 
 const projects = [
   {
@@ -25,7 +22,7 @@ const projects = [
       'Book services online tailored for home service businesses.',
     link: { href: 'https://www.housecallpro.com/', label: 'Case Study' },
     internal: false,
-    logo: logoPlanetaria,
+    logo: logoHousecallpro,
   },
   {
     name: 'Neurosphere',

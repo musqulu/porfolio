@@ -279,7 +279,7 @@ const projects = [
       'Book services online tailored for home service businesses.',
     link: { href: 'https://www.housecallpro.com/', label: 'Case Study' },
     internal: false,
-    logo: logoPlanetaria,
+    logo: logoHousecallpro,
   },
   {
     name: 'Neurosphere',
