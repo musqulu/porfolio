@@ -15,11 +15,11 @@ import {
 import logoHousecallpro from '@/images/logos/housecallpro.svg'
 import logoNeurosphere from '@/images/logos/neurosphere.svg'
 import logoUltimo from '@/images/logos/ultimo.svg'
+import logoMovieAvatars from '@/images/logos/movieavatars.svg'
 
 import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -271,7 +271,7 @@ const projects = [
       'Transform your photos into movie-inspired ai avatars.',
     link: { href: 'https://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
     internal: false,
-    logo: logoPlanetaria,
+    logo: logoMovieAvatars,
   },
   {
     name: 'HCP Online Booking',
