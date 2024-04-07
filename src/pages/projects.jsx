@@ -17,10 +17,10 @@ const projects = [
     logo: logoPlanetaria,
   },
   {
-    name: 'HCP Online Booking',
+    name: 'Housecall Pro Online Booking',
     description:
-      'Book services online tailored for home service businesses.',
-    link: { href: 'https://www.housecallpro.com/', label: 'Case Study' },
+      'Building the best online booking tool for home service proffesionals.',
+    link: { href: 'https://www.housecallpro.com/features/online-booking/', label: 'housecallpro.com', target: '_blank' },
     internal: false,
     logo: logoHousecallpro,
   },
