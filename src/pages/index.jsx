@@ -169,10 +169,7 @@ function Resume() {
       title: 'Designer & Developer',
       logo: logoAirbnb,
       start: '2013',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear(),
-      },
+      end: '2022'
     },
     {
       company: 'Neurosphere',
@@ -274,7 +271,7 @@ const projects = [
     logo: logoMovieAvatars,
   },
   {
-    name: 'Housecall Pro Online Booking',
+    name: 'Housecall Pro',
     description:
       'Building the best online booking tool for home service proffesionals.',
     link: { href: 'https://www.housecallpro.com/features/online-booking/', label: 'housecallpro.com', target: '_blank' },

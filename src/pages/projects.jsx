@@ -17,7 +17,7 @@ const projects = [
     logo: logoPlanetaria,
   },
   {
-    name: 'Housecall Pro Online Booking',
+    name: 'Housecall Pro',
     description:
       'Building the best online booking tool for home service proffesionals.',
     link: { href: 'https://www.housecallpro.com/features/online-booking/', label: 'housecallpro.com', target: '_blank' },
