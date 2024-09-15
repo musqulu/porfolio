@@ -9,15 +9,15 @@ export default function AdventuresIndex({ adventures }) {
   return (
     <>
       <Head>
-        <title>Adventures - Konrad Galan</title>
+        <title>Photos - Konrad Galan</title>
         <meta
           name="description"
-          content="My adventures that I want to share with you."
+          content="Documenting my life through photos."
         />
       </Head>
 
       <SimpleLayout
-        title="My adventures worth sharing"
+        title="Documenting my life through photos."
         intro="Experiences that recharge my batteries and make me happy."
       >
 

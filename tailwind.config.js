@@ -88,6 +88,9 @@ module.exports = {
           '--tw-prose-invert-th-borders': theme('colors.zinc.700'),
           '--tw-prose-invert-td-borders': theme('colors.zinc.800'),
 
+          '--tw-prose-invert-body': theme('colors.zinc.400'),
+          '--tw-prose-invert-headings': theme('colors.zinc.200'),
+
           // Base
           color: 'var(--tw-prose-body)',
           lineHeight: theme('lineHeight.7'),
@@ -301,5 +304,16 @@ module.exports = {
         },
       },
     }),
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            'img.no-rounded': {
+              borderRadius: '0 !important',
+            },
+          },
+        },
+      },
+    },
   },
 }

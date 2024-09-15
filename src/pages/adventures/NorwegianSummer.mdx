@@ -1,0 +1,13 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import image1 from '@/images/photos/norwegiansummer/NorwegianSummer-1.jpeg'
+
+
+export const meta = { author: 'Konrad Galan', date: '2024-09-15', title: 'Norwegian Summer', image: 'https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg', description: '', }
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+Norwegian Summer is a visual journey through the rugged and serene landscapes of Norway, capturing moments of solitude, adventure, and the subtle human presence in nature’s vast expanse.
+
+<Image src={image1} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
