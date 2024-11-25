@@ -18,7 +18,6 @@ import image15 from '@/images/photos/norwegiansummer/NorwegianSummer-15.jpeg'
 import image16 from '@/images/photos/norwegiansummer/NorwegianSummer-16.jpeg'
 import image17 from '@/images/photos/norwegiansummer/NorwegianSummer-17.jpeg'
 
-
 export const meta = {
   author: 'Konrad Galan',
   date: '2024-09-15',
@@ -27,40 +26,31 @@ export const meta = {
   description: '',
 }
 
-export default (props) => <ArticleLayout meta={meta} {...props} />
+export const images = [image12, image8, image6, image1, image3, image5, image7, image9, image10, image11, image13, image14, image15, image16, image17]
 
+export default function NorwegianSummer(props) {
+  return (
+    <ArticleLayout meta={meta} {...props}>
+      <p>
+        Norwegian Summer is a visual journey through the rugged and serene landscapes of Norway, capturing moments of solitude, adventure, and the subtle human presence in nature's vast expanse.
+      </p>
 
-Norwegian Summer is a visual journey through the rugged and serene landscapes of Norway, capturing moments of solitude, adventure, and the subtle human presence in nature’s vast expanse.
+      {images.map((image, index) => (
+        <ExpandableImage 
+          key={index}
+          src={image} 
+          alt={`Norwegian landscape ${index + 1}`} 
+          width={1440} 
+          height={1440} 
+          className="no-rounded"
+          images={images}
+          currentIndex={index}
+        />
+      ))}
 
-<ExpandableImage src={image12} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image8} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image6} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image1} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image3} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image5} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image7} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image9} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image10} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image11} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image13} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image14} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image15} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image16} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-<ExpandableImage src={image17} alt="Norwegian landscape" width={1440} height={1440} className="no-rounded" />
-
-
-While Norway’s wilderness dominates, human presence weaves its way into these landscapes, creating quiet moments of contrast.
+      <p>
+        While Norway's wilderness dominates, human presence weaves its way into these landscapes, creating quiet moments of contrast.
+      </p>
+    </ArticleLayout>
+  )
+}
