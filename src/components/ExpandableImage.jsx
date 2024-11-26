@@ -17,6 +17,23 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
     }
   }, [isExpanded])
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isExpanded) return
+
+      if (e.key === 'ArrowLeft') {
+        setActiveIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1))
+      } else if (e.key === 'ArrowRight') {
+        setActiveIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0))
+      } else if (e.key === 'Escape') {
+        setIsExpanded(false)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isExpanded, images.length])
+
   const handlePrevious = (e) => {
     e.stopPropagation()
     setActiveIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1))
@@ -43,6 +60,10 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
           onClick={() => setIsExpanded(false)}
           style={{ margin: 0, padding: 0 }}
         >
+          <div className="hidden md:block absolute bottom-4 left-4 text-white/50 text-xs">
+            Use ← → arrows to navigate • ESC to close
+          </div>
+
           <button
             className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition-colors z-50"
             onClick={() => setIsExpanded(false)}
