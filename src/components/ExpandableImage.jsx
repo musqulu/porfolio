@@ -100,7 +100,7 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
       />
       {isExpanded && (
         <div
-          className="fixed inset-0 bg-zinc-900/95 flex items-center justify-center z-50 h-[100vh]"
+          className="fixed inset-0 bg-zinc-900 flex items-center justify-center z-50 h-screen w-screen overflow-hidden touch-none"
           onClick={() => setIsExpanded(false)}
           style={{ margin: 0, padding: 0 }}
         >
