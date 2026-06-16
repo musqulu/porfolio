@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -15,16 +14,10 @@ import {
 import logoHousecallpro from '@/images/logos/housecallpro.svg'
 import logoNeurosphere from '@/images/logos/neurosphere.svg'
 import logoUltimo from '@/images/logos/ultimo.svg'
-import logoMovieAvatars from '@/images/logos/movieavatars.svg'
 
 import logoAirbnb from '@/images/logos/airbnb.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
 import { formatDate } from '@/lib/formatDate'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
@@ -234,41 +227,16 @@ function Resume() {
   )
 }
 
-function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
 
-  return (
-    <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
-          <div
-            key={image.src}
-            className={clsx(
-              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
-              rotations[imageIndex % rotations.length]
-            )}
-          >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  )
-}
 
-const projects = [
+const selectedWork = [
   {
-    name: 'Movie Avatars',
+    name: 'HCP AI Booking agent',
     description:
-      'Transform your photos into movie-inspired ai avatars.',
-    link: { href: 'https://movieaiavatars.com', label: 'movieaiavatars.com', target: '_blank' },
-    internal: false,
-    logo: logoMovieAvatars,
+      'Agentic workflow design — an AI assistant that diagnoses booking setup, recommends changes, and guides pros through human-in-the-loop approvals.',
+    link: { href: '/studies/online-booking', label: 'View case study' },
+    internal: true,
+    logo: logoHousecallpro,
   },
   {
     name: 'Housecall Pro',
@@ -286,14 +254,9 @@ const projects = [
     internal: false,
     logo: logoNeurosphere,
   },
-  {
-    name: 'Hikerstash',
-    description:
-      'Manage, share & create best hiking setup.',
-    link: { href: 'http://hikerstash.com', label: 'hikerstash.com', target: '_blank' },
-    internal: false,
-    logo: logoPlanetaria,
-  },
+]
+
+const personalProjects = [
   {
     name: 'Uid8',
     description:
@@ -303,6 +266,42 @@ const projects = [
     logo: logoPlanetaria,
   },
 ]
+
+function ProjectGrid({ projects }) {
+  return (
+    <ul
+      role="list"
+      className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      {projects.map((project) => (
+        <Card as="li" key={project.name}>
+          <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <Image
+              src={project.logo}
+              alt=""
+              className="h-8 w-8"
+              unoptimized
+            />
+          </div>
+          <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+            <Card.Link
+              href={project.link.href}
+              target={project.internal ? undefined : '_blank'}
+              rel={project.internal ? undefined : 'noopener noreferrer'}
+            >
+              {project.name}
+            </Card.Link>
+          </h2>
+          <Card.Description>{project.description}</Card.Description>
+          <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-red-400 dark:text-zinc-200">
+            <LinkIcon className="h-6 w-6 flex-none" />
+            <span className="ml-2">{project.link.label}</span>
+          </p>
+        </Card>
+      ))}
+    </ul>
+  )
+}
 
 function LinkIcon(props) {
   return (
@@ -335,9 +334,17 @@ export default function Home({ articles }) {
 
       <Container className="mt-9">
         <div className="max-w-9xl mx-auto">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Full-stack product designer crafting simple yet beautiful digital products.
+          <h1 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
+            Product designer for AI agents, complex workflows, and experimental interfaces.
           </h1>
+          <div className="mt-6 space-y-4 text-base text-zinc-600 dark:text-zinc-400">
+            <p>
+              I design and prototype product experiences where humans collaborate with software, from online booking systems used by thousands of businesses to AI-powered tools, creative interfaces, and agentic workflows.
+            </p>
+            <p>
+              Currently building with LLMs, Hermes-style agents, Next.js, Supabase, realtime voice, and code-based prototypes.
+            </p>
+          </div>
           <div className="mt-6 flex gap-6">
             <SocialLink
               target="_blank"
@@ -366,37 +373,20 @@ export default function Home({ articles }) {
           </div>
         </div>
       </Container>
-      <Photos />
 
       <SimpleLayout
-        title="Portfolio"
+        title="Selected work"
+        titleClassName="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl"
       >
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {projects.map((project) => (
-            <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image
-                  src={project.logo}
-                  alt=""
-                  className="h-8 w-8"
-                  unoptimized
-                />
-              </div>
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href} target={project.internal ? undefined : "_blank"}
-                  rel={project.internal ? undefined : "noopener noreferrer"}>{project.name}</Card.Link>
-              </h2>
-              <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-red-400 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
-            </Card>
-          ))}
-        </ul>
+        <ProjectGrid projects={selectedWork} />
+      </SimpleLayout>
+
+      <SimpleLayout
+        title="Personal projects"
+        titleClassName="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl"
+        className="mt-24 sm:mt-32"
+      >
+        <ProjectGrid projects={personalProjects} />
       </SimpleLayout>
 
 

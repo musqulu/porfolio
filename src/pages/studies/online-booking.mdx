@@ -1,58 +1,80 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import { CaseStudyPrototypeCard } from '@/components/CaseStudyPrototypeCard'
+import prototypeScreenshot from '@/images/case-studies/hcp-ai-booking-agent.png'
 
 export const meta = {
   author: 'Konrad Galan',
-  date: '2023-07-07',
-  title: 'Hello-world',
+  date: '2026-06-16',
+  title: 'Designing an AI Booking Agent for service businesses',
+  subtitle:
+    'Helping home service pros fix misconfigured online booking — through a conversational agent that surfaces high-impact improvements they can accept or skip.',
   description:
-    'Hello, it is good to see you.',
+    'A case study in agentic workflow design for Housecall Pro — diagnosing bad booking configuration, ranking improvements by business impact, and guiding pros through human-in-the-loop changes.',
 }
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
-I've been trying to be consistent with coding and taking walks. I have to goal to push at least one commit per day and do 10.000 steps. Now I have a new goal. Write an article, one per week. Share whatever happened with me, what inspired me. What pissed me off. 
+At Housecall Pro, a long tail of online booking users had enabled the feature but never configured it well. Many didn’t know what a good setup looked like — incomplete services, wrong availability, vague copy — and a bad configuration can quietly kill conversion entirely. Plenty of pros were getting zero bookings without understanding why.
 
-  ## This is the beginning.
+We discovered this gap and set out to improve it: help more users reach a working online booking setup, increase conversion across the board, and fix the configuration problems that were leaving money on the table.
 
-  I always aspired to become an indie hacker. Even when I had no idea about building digital products, I would just take a big piece of paper and start drawing UI and thinking about what it could be doing.
+This project tackles that directly — an interactive, agentic experience where pros review configuration improvements one at a time, accept or decline each suggestion, and move on to the next highest-impact change. The UI stays simple and conversational rather than dumping them into another settings maze.
 
-  Now, almost 10 years later, I do it for a living. That used to be my goal: get a good remote job and travel the world. Once I got there, the goal started to shift towards having more freedom and more money.
+<CaseStudyPrototypeCard
+  href="https://agentic-onboarding-one.vercel.app/?variant=v4"
+  image={prototypeScreenshot}
+  imageAlt="HCP AI booking agent showing a high-impact scheduling type recommendation with accept and decline actions"
+  description="A dynamic prototype with multiple scenarios — see how the recommendation system responds to different booking configurations."
+/>
 
-  I never felt like I would be able to work somewhere for longer, but all the experiences while working were so valuable to me and ultimately got me to where I am today.
+## Grounding suggestions in real data
 
-  I am truly grateful for everything, literally everything, that has happened in my life!
+To properly help users fix their setup, we first had to define what “good” online booking actually looks like. We analyzed product data and studied top-performing HVAC pros — what they configured, how their services were structured, and what separated high-converting booking pages from ones that stalled.
 
-  ## It has not always been easy nor nice.
+From that research, we built a set of guidelines: clear rules about what strong configuration looks like across services, availability, copy, and flow. Those guidelines were then fed into the AI so suggestions weren’t generic — they reflected patterns that were already working for the best performers in the category.
 
-  All the experiences I have had in my life have made me who I am today.
+The prototype is dynamic and built to stress-test that system. It includes a range of different scenarios — incomplete setups, misconfigured availability, weak service descriptions — and shows how the recommendation engine responds based on each starting configuration. Switch between them and you can see how the same underlying logic surfaces different improvements depending on what the pro actually has live today.
 
-  All those stressful situations taught me something about myself that I did not know earlier.
+## The agentic flow
 
-  All the people I have met along the way have affected me in some way.
+The experience moves through clear states, like working with someone who knows the product:
 
-  It used to be hard, but I never gave up. I was always pushing. I had this weird feeling deep inside of me that it would get better, and the only thing I could do right then was to keep pushing.
+1. **Look through your settings** — the agent reviews the pro’s current online booking configuration
+2. **Analyze** — identify what’s misconfigured, incomplete, or likely hurting conversion
+3. **Suggest** — surface specific improvements, categorized by the impact they could have on the business
+4. **Decide** — the pro accepts or declines each change before anything is applied
+5. **Continue** — move to the next recommendation and keep improving the setup over time
 
-  ## Mindfulness.
+Each step is one conversation, not a wall of options. The goal is steady progress toward a booking page that actually converts.
 
-  One of the best things that helped me grow was meditation.
+## Setup diagnosis
 
-  I remember when, during my early twenties, I was backpacking around Southeast Asia and I had that piece of paper in my wallet with 100 things I wanted to do in my life. (I still do have that paper in my wallet.)
+The agent started by reading what was already live — service lists left half-finished, availability that didn’t match real working hours, descriptions too vague to convert, flows that didn’t reflect how the business actually operates.
 
-  One of those things was "live like a Buddhist monk." I had no idea what it meant, but I knew that these Buddhist monks had learned something that would help me.
+For many users, the problem wasn’t that online booking was broken. It was that their configuration was — and they had no way to see it. The diagnosis step made those gaps visible in plain language before any change was proposed.
 
-  So, I ended up doing a Vipassana retreat in Thailand, in a place that was recommended to me by a girl at the bus station. That is another great story!
+## Recommendations ranked by impact
 
-  That changed a lot of my life and gave me the understanding that we can achieve anything if we keep training our minds. Sounds cheesy, I know...
+Suggestions weren’t presented as a flat checklist. Each improvement was categorized by the impact it could have on the business — what would move conversion most, what was quick to fix, what could wait.
 
-  ## I still have that feeling.
+That ranking helped pros focus on changes worth making first: rewrite a service description, tighten availability windows, fix routing rules that sent customers nowhere. One meaningful improvement at a time, ordered by what mattered most.
 
-  I still feel that it will get better, or at least it can get better! Sometimes I might forget about my goals, but then I quickly get back to remembering them.
+## Human-in-the-loop by default
 
-  Right now, what I want is to be consistent:
+Nothing applied automatically. Every recommendation came with a clear summary of what would change on the live booking page, and the pro chose to accept or decline it.
 
-  1. With growth.
-  2. With movement.
-  3. With taking care of myself.
-  4. With joy.
+That kept trust intact — especially for users who already felt unsure about their setup. The agent proposed; the pro decided. Skip what doesn’t fit, apply what does, and keep going.
 
-  This is an attempt to start doing things differently to get different results. Let's see how it will go.
+## A conversational UI
+
+The interface stayed lightweight: short messages, obvious next steps, no dense admin panels. States like analyzing settings or waiting for approval were visible so the pro always knew where they were in the flow.
+
+After one improvement was handled, the experience naturally continued to the next thing that could make the business better — building momentum without overwhelming someone who just wanted their booking page to start working.
+
+## Connecting to Online Booking settings
+
+The agent didn’t replace existing settings. It sat on top of them — reading the same configuration pros would edit manually, proposing changes against real levers, and applying only what was approved.
+
+When a pro accepted a suggestion, the update landed in the familiar Online Booking surfaces they already knew. The agent was the guide through a confusing setup problem; the product remained the source of truth.
+
+Looking ahead, this booking agent is designed as one specialist in a broader Housecall Pro AI system. From a single conversational interface, the main AI could spin up focused agents like this one based on what the user is trying to accomplish — fix my booking setup, improve scheduling, adjust pricing, and so on. Each agent handles its domain, but they can work together when a request spans multiple areas, coordinating toward the outcome the pro actually wants rather than forcing them through separate tools.
