@@ -45,13 +45,12 @@ export default function About() {
         <title>About - Konrad Galan</title>
         <meta
           name="description"
-          content="Hey I'm Konrad. I live in the mountains, nature, travelling and building products."
+          content="Senior Product Designer working across product strategy, interaction design, visual craft, and prototyping. Interested in AI agents, complex workflows, and experimental interfaces."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-          <div class
-            Name="lg:pl-20">
+          <div className="lg:pl-20">
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
                 src={portraitImage}
@@ -63,26 +62,25 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              Hey I am Konrad. <span className="text-red-400"><br></br>I love nature</span>, travelling and building products.
+              Hey, I&apos;m Konrad.
             </h1>
 
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I have always loved computers and anything related to it. Since I was a kid I was always tinkering with computers and trying to learn as much as I could about them.
+                I&apos;m a Senior Product Designer working across product strategy, interaction design, visual craft, and prototyping. I&apos;m interested in AI agents, complex workflows, and experimental interfaces, especially how people can better understand, trust, and collaborate with technology.
               </p>
               <p>
-                I have been always a curious person. That took me places all around the world and gave me a new perspective. I use that perspective to build products that are useful and solve real problems. I put users first, but make enough space for business goals.
+                At Housecall Pro, I work across CSR AI, Automations, Online Booking, Booking Agent, Pipeline, and Leads, helping simplify complex revenue and operational workflows for home service businesses. My work supports an Online Booking product handling an average of 53k bookings per month.
               </p>
               <p>
-                I am easy to work with, communicative and always look for ways to improve myself and my craft. If not designing I might be tinkering with some new technology. I am a big believer in learning by doing and always looking for new challenges.
+                I enjoy working closely with engineers, product managers, and other designers. I&apos;m comfortable working with code, building prototypes, and turning ambiguous ideas into clear product experiences.
               </p>
               <p>
-                When not working I am probably hiking in the mountains, travelling or taking photos. I have big entepreneurial aspirations and I am building my own things 1% at a time.
+                Alongside product work, I&apos;m pursuing a master&apos;s degree in Photography at the Łódź Film School. I explore AI-related art projects involving voice, memory, creative tools, and interactive installations.
               </p>
               <p>
-                I&apos;m trying to live a healthy and sustainable life where I am helpful to others.
+                Outside of work, I spend time in nature, travel, and take photographs. These projects shape how I think about technology, presence, and human experience.
               </p>
-
             </div>
           </div>
           <div className="lg:pl-20">
