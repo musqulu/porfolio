@@ -34,8 +34,8 @@ export const selectedWork = [
     name: 'Neurosphere',
     description:
       'Neurofeedback based meditation training for improved well-being.',
-    link: { href: 'http://neurosphere.io', label: 'neurosphere.io', target: '_blank' },
-    internal: false,
+    link: { href: '/studies/neurosphere', label: 'View project' },
+    internal: true,
     logo: logoNeurosphere,
   },
 ]
