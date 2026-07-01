@@ -11,23 +11,23 @@ import logoUid8 from '@/images/logos/uid8.png'
 
 export const selectedWork = [
   {
-    name: 'HCP AI Booking agent',
-    description:
-      'Agentic workflow design — an AI assistant that diagnoses booking setup, recommends changes, and guides pros through human-in-the-loop approvals.',
-    link: { href: '/studies/online-booking', label: 'View case study' },
-    internal: true,
-    logo: logoHousecallpro,
-  },
-  {
     name: 'Housecall Pro',
     description:
-      'Building the best online booking tool for home service proffesionals.',
+      'Simplifying revenue and operational workflows across CSR AI, online booking, pipeline, and leads for home service businesses.',
     link: {
       href: 'https://www.housecallpro.com/features/online-booking/',
       label: 'housecallpro.com',
       target: '_blank',
     },
     internal: false,
+    logo: logoHousecallpro,
+  },
+  {
+    name: 'HCP AI Booking agent',
+    description:
+      'Agentic workflow design — an AI assistant that diagnoses booking setup, recommends changes, and guides pros through human-in-the-loop approvals.',
+    link: { href: '/studies/online-booking', label: 'View case study' },
+    internal: true,
     logo: logoHousecallpro,
   },
   {

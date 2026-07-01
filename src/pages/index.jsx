@@ -244,9 +244,6 @@ export default function Home({ articles }) {
             <p>
               I design and prototype product experiences where humans collaborate with software, from online booking systems used by thousands of businesses to AI-powered tools, creative interfaces, and agentic workflows.
             </p>
-            <p>
-              Currently building with LLMs, Hermes-style agents, Next.js, Supabase, realtime voice, and code-based prototypes.
-            </p>
           </div>
           <div className="mt-6 flex gap-6">
             <SocialLink
