@@ -150,6 +150,9 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
               src={images[activeIndex]}
               alt={`Image ${activeIndex + 1}`}
               fill
+              sizes="100vw"
+              quality={100}
+              unoptimized
               style={{ objectFit: 'contain' }}
               className="no-rounded"
               priority

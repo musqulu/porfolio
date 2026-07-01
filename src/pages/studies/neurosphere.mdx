@@ -1,4 +1,8 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
+import { ExpandableImage } from '@/components/ExpandableImage'
+import mobileScreens from '@/images/case-studies/neurosphere-mobile.png'
+import workbookPage from '@/images/case-studies/neurosphere-workbook.png'
+import coursePlatform from '@/images/case-studies/neurosphere-course.png'
 
 export const meta = {
   author: 'Konrad Galan',
@@ -10,20 +14,61 @@ export const meta = {
 
 export default (props) => <ArticleLayout meta={meta} {...props} />
 
+[neurosphere.io →](https://neurosphere.io)
+
 Neurosphere is a Berlin-based startup building mindfulness products powered by real-time EEG neurofeedback. A textile headband reads brainwave activity and turns that signal into audio feedback through a companion app.
 
 I joined to improve the product experience and help shape a broader ecosystem around neurofeedback. My work grew from UX on the existing product into product direction across mobile, web, brand, and physical touchpoints.
 
-I worked on:
+## Mobile app & neurofeedback flows
 
-- Mobile app UX and neurofeedback feedback flows
-- Product research, including qualitative and quantitative studies
-- Web platform and marketing website, including payment flows
-- Brand direction, visual identity, tone of voice, and print materials
-- Early hardware experiments around how EEG signals could translate into meaningful user feedback
+Mobile app UX and the core neurofeedback feedback flows: meditation selection, live sessions with device connection, progress tracking, and session summaries that translate EEG data into something users can actually understand.
 
-The project taught me a lot about designing under real technical constraints. The experience had to respond to noisy, imperfect live data while still feeling clear, calming, and trustworthy.
+<ExpandableImage
+  src={mobileScreens}
+  alt="Neurosphere mobile app screens showing meditation selection, progress tracking, a live neurofeedback session, and session summary"
+  width={mobileScreens.width}
+  height={mobileScreens.height}
+  images={[mobileScreens]}
+  currentIndex={0}
+/>
 
-It was a small, fast-moving startup environment with a lot of experimentation across product, brand, and hardware.
+## 6-week mindfulness course
 
-[neurosphere.io →](https://neurosphere.io)
+Designed and developed the platform for a structured 6-week mindfulness course with weekly live webinars, guided exercises, and neurofeedback meditation sessions tied together in one learning experience.
+
+<ExpandableImage
+  src={coursePlatform}
+  alt="Neurosphere Superpower Course web platform showing weekly course chapters, onboarding, and upcoming content"
+  width={coursePlatform.width}
+  height={coursePlatform.height}
+  images={[coursePlatform]}
+  currentIndex={0}
+/>
+
+## Workbook & print materials
+
+Designed the physical workbook that accompanied the course, plus supporting print materials across the broader product ecosystem.
+
+<ExpandableImage
+  src={workbookPage}
+  alt="Neurosphere course workbook page showing SMART goal-setting exercises with guided prompts and writing areas"
+  width={workbookPage.width}
+  height={workbookPage.height}
+  images={[workbookPage]}
+  currentIndex={0}
+/>
+
+## Web platform & website
+
+Built out the marketing website including payment flows, and contributed to the web platform that supported the product and course experience.
+
+## Brand direction
+
+Shaped the visual identity, tone of voice, and how the product presented itself across every touchpoint, from digital to print.
+
+## Hardware experiments
+
+Early work around how EEG signals could translate into meaningful user feedback. A lot of hands-on iteration with the hardware team, testing what works when the signal is clean, what happens when it's noisy, and how to make the experience feel clear and trustworthy rather than gimmicky.
+
+The project taught me a lot about designing under real technical constraints. It was a small, fast-moving startup environment with a lot of experimentation across product, brand, and hardware.
