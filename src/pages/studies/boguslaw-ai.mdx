@@ -1,0 +1,84 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { ExpandableImage } from '@/components/ExpandableImage'
+import interfaceIdle from '@/images/case-studies/boguslaw-ai-interface.png'
+import memoryOne from '@/images/case-studies/boguslaw-ai-memory-1.png'
+import memoryTwo from '@/images/case-studies/boguslaw-ai-memory-2.png'
+import memoryThree from '@/images/case-studies/boguslaw-ai-memory-3.png'
+
+export const meta = {
+  author: 'Konrad Galan',
+  date: '2026-07-02',
+  title: 'Bogusław AI',
+  subtitle:
+    'A working AI memory of my grandfather, rebuilt from an old VHS tape, family stories, and a real time voice model.',
+  description:
+    'A personal, ongoing project exploring what it means to preserve someone through AI: a talking, evolving memory of my grandfather, paired with a documentary confronting my family with the result.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+[github.com/musqulu/memo →](https://github.com/musqulu/memo)
+
+Bogusław AI is a working prototype of my grandfather's memory. It started as a small art installation idea and turned into something bigger: a long term project pairing a documentary film with an installation that holds an increasingly complete memory of him, built from a single VHS tape and stories from the people who actually knew him.
+
+The whole thing is fully open source. Code, prompts, and the interface are public on GitHub for anyone who wants to see how it works or build something similar.
+
+<ExpandableImage
+  src={interfaceIdle}
+  alt="Bogusław AI interface shown as a rough, glowing dot pattern portrait while listening, with a disconnect button below"
+  width={interfaceIdle.width}
+  height={interfaceIdle.height}
+  images={[interfaceIdle]}
+  currentIndex={0}
+/>
+
+## Rebuilding a voice from one tape
+
+That VHS tape is the clearest recording of my grandfather's voice that exists. Cloning it with ElevenLabs, and putting a real time layer on top with OpenAI's realtime API, gave me something I could actually hold a conversation with. Every memory I add now, from parents, aunts, cousins, gets folded into that same voice. It's less a recreation of one person's memory of him and more a shared, composite one.
+
+Privacy is a real concern once something this personal can talk back, so the project has also pulled me toward local models. I'd rather this eventually run entirely on hardware I own than on someone else's servers, which is part of why I've started looking seriously at building a small local AI rack.
+
+## Speaking and listening
+
+Live lip sync is still slow and expensive, and a bad version of a face is worse than no face at all. So the interface works in two modes instead: speaking and listening. While it's listening, it's just a rough, almost unrecognizable pattern of light, close to how a face fades in memory when someone isn't around to remind you what they actually looked like.
+
+The moment it starts speaking about a specific memory, an old VHS clip tied to that memory plays behind it.
+
+<div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+  <ExpandableImage
+    src={memoryOne}
+    alt="Grainy VHS clip of my grandfather talking, shown while Bogusław AI recalls that memory"
+    width={memoryOne.width}
+    height={memoryOne.height}
+    images={[memoryOne, memoryTwo, memoryThree]}
+    currentIndex={0}
+  />
+  <ExpandableImage
+    src={memoryTwo}
+    alt="Grainy VHS clip inside a shop, shown while Bogusław AI recalls that memory"
+    width={memoryTwo.width}
+    height={memoryTwo.height}
+    images={[memoryOne, memoryTwo, memoryThree]}
+    currentIndex={1}
+  />
+  <ExpandableImage
+    src={memoryThree}
+    alt="Grainy VHS clip of a family gathering at a caravan, shown while Bogusław AI recalls that memory"
+    width={memoryThree.width}
+    height={memoryThree.height}
+    images={[memoryOne, memoryTwo, memoryThree]}
+    currentIndex={2}
+  />
+</div>
+
+## A memory that keeps changing
+
+This isn't a fixed script of answers. Every conversation shapes how it responds the next time, and every new detail a family member shares gets absorbed into it. It's not trying to be a historically accurate record. It's trying to feel like how memory actually works: overlapping, occasionally contradicting itself, changing shape depending on who's remembering.
+
+## The documentary
+
+Alongside the installation, I'm filming a documentary about the whole process. The plan is to sit down with my closest family members, in front of the finished result, and film their reaction. I want that moment to sit somewhere unusual: not really about death, but about how different our private memory of someone is from a fuller, combined version built from everyone who knew them.
+
+## Where it stands
+
+This is very much a work in progress, and my main personal project this year. The voice and the growing memory already hold up in conversation; the harder open problems are full local inference, more natural turn taking, and an interface that stays honest about being a reconstruction rather than pretending to be more than it is. It's the most personal thing I've built, and probably the one I care most about getting right.

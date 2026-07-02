@@ -1,19 +1,43 @@
-import logoAnaloghive from '@/images/logos/analoghive.png'
-import logoCloner from '@/images/logos/cloner.png'
-import logoHermesDash from '@/images/logos/hermes-dash.png'
-import logoHikerstash from '@/images/logos/hikerstash.png'
+import {
+  CameraIcon,
+  ChartBarSquareIcon,
+  BookOpenIcon,
+  DeviceTabletIcon,
+  MapIcon,
+  SparklesIcon,
+  UserGroupIcon,
+} from '@/components/ProjectIcons'
 import logoHousecallpro from '@/images/logos/housecallpro.svg'
-import logoMemo from '@/images/logos/memo.png'
 import logoMovieAvatars from '@/images/logos/movieavatars.svg'
 import logoNeurosphere from '@/images/logos/neurosphere.svg'
-import logoRamz from '@/images/logos/ramz.png'
-import logoUid8 from '@/images/logos/uid8.png'
+
+const ramz = {
+  name: 'Ramz',
+  description:
+    'Analyzes an interface, captures what makes it work, and turns it into clear design guidance for AI agents.',
+  link: {
+    href: 'https://github.com/musqulu/ramz-design-skill',
+    label: 'github.com/musqulu/ramz-design-skill',
+    target: '_blank',
+  },
+  internal: false,
+  icon: SparklesIcon,
+}
+
+const boguslawAi = {
+  name: 'Bogusław AI',
+  description:
+    'A working AI memory of my grandfather, rebuilt from an old VHS tape and family stories.',
+  link: { href: '/studies/boguslaw-ai', label: 'View case study' },
+  internal: true,
+  icon: BookOpenIcon,
+}
 
 export const selectedWork = [
   {
     name: 'Housecall Pro',
     description:
-      'Simplifying revenue and operational workflows across CSR AI, online booking, pipeline, and leads for home service businesses.',
+      'Simplifying revenue and operational workflows across CSR AI, automations, online booking, pipeline, and leads for home service businesses.',
     link: {
       href: 'https://www.housecallpro.com/features/online-booking/',
       label: 'housecallpro.com',
@@ -30,6 +54,8 @@ export const selectedWork = [
     internal: true,
     logo: logoHousecallpro,
   },
+  ramz,
+  boguslawAi,
   {
     name: 'Neurosphere',
     description:
@@ -41,18 +67,7 @@ export const selectedWork = [
 ]
 
 export const explorations = [
-  {
-    name: 'Ramz',
-    description:
-      'Analyzes an interface, captures what makes it work, and turns it into clear design guidance for AI agents.',
-    link: {
-      href: 'https://github.com/musqulu/ramz-design-skill',
-      label: 'github.com/musqulu/ramz-design-skill',
-      target: '_blank',
-    },
-    internal: false,
-    logo: logoRamz,
-  },
+  ramz,
   {
     name: 'Analoghive',
     description:
@@ -63,19 +78,9 @@ export const explorations = [
       target: '_blank',
     },
     internal: false,
-    logo: logoAnaloghive,
+    icon: CameraIcon,
   },
-  {
-    name: 'Memo',
-    description: 'Interface for a cloned memory of my grandfather.',
-    link: {
-      href: 'https://github.com/musqulu/memo',
-      label: 'github.com/musqulu/memo',
-      target: '_blank',
-    },
-    internal: false,
-    logo: logoMemo,
-  },
+  boguslawAi,
   {
     name: 'Hermes Dash',
     description: 'Dashboard for hermes reports & agent management.',
@@ -85,7 +90,7 @@ export const explorations = [
       target: '_blank',
     },
     internal: false,
-    logo: logoHermesDash,
+    icon: ChartBarSquareIcon,
   },
   {
     name: 'Cloner',
@@ -97,7 +102,7 @@ export const explorations = [
       target: '_blank',
     },
     internal: false,
-    logo: logoCloner,
+    icon: UserGroupIcon,
   },
 ]
 
@@ -118,7 +123,7 @@ export const archivedProjects = [
       target: '_blank',
     },
     internal: false,
-    logo: logoHikerstash,
+    icon: MapIcon,
   },
   {
     name: 'Uid8',
@@ -126,6 +131,6 @@ export const archivedProjects = [
       'Low-fi design ipad app to quickly validate ideas and mock prototypes.',
     link: { href: '#', label: 'Discontinued', target: '_blank' },
     internal: true,
-    logo: logoUid8,
+    icon: DeviceTabletIcon,
   },
 ]
