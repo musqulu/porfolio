@@ -245,6 +245,9 @@ export default function Home({ articles }) {
               I design and prototype product experiences where humans collaborate with software, from online booking systems used by thousands of businesses to AI-powered tools, creative interfaces, and agentic workflows.
             </p>
           </div>
+          <div className="mt-6">
+            <Button href="/portfolio-agent">Learn more about me</Button>
+          </div>
           <div className="mt-6 flex gap-6">
             <SocialLink
               target="_blank"

@@ -4,10 +4,19 @@ import rehypePrism from '@mapbox/rehype-prism'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  pageExtensions: ['js', 'jsx', 'mdx'],
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   reactStrictMode: true,
   experimental: {
     scrollRestoration: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/konrad-agent',
+        destination: '/portfolio-agent',
+        permanent: true,
+      },
+    ]
   },
 }
 
