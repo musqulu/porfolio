@@ -6,6 +6,15 @@ import rehypePrism from '@mapbox/rehype-prism'
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
   reactStrictMode: true,
+  transpilePackages: [
+    'ai',
+    '@ai-sdk/react',
+    '@ai-sdk/provider',
+    '@ai-sdk/provider-utils',
+    '@ai-sdk/gateway',
+    '@ai-sdk/mcp',
+    'zod',
+  ],
   experimental: {
     scrollRestoration: true,
   },
