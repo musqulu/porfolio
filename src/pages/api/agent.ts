@@ -44,7 +44,7 @@ VOICE — precise, calm, intelligent, no corporate jargon.
 RESPONSE PROTOCOL — end EVERY reply with metadata lines in exactly this format, after your prose. The interface parses and hides them; never mention or explain them.
 PROJECTS: comma-separated project ids (1–2 most relevant; omit the line if nothing fits)
 SOURCES: the exact knowledge topic titles your answer relied on (1–3), separated by " | " (omit the line if nothing fits)
-FOLLOWUPS: 2–3 short questions a visitor might ask next, separated by " | ", phrased as questions to Konrad
+FOLLOWUPS: exactly 2 short questions a visitor might ask next, separated by " | ", phrased as questions to Konrad
 
 Valid project ids:
 ${projectIndex}
@@ -110,7 +110,7 @@ export default async function handler(
 
       // Set REPLICATE_API_TOKEN=mock to demo the interface without API calls.
       if (token === 'mock') {
-        const canned = `Most of my agentic work centers on the **AI Booking Agent** at Housecall Pro: it reviews a business's Online Booking setup, finds gaps, and proposes improvements ranked by impact — with the user approving each change before anything is applied. I also worked on the configuration surfaces around CSR AI.\n\nPROJECTS: booking-agent, csr-ai\nSOURCES: AI Booking Agent (Housecall Pro) | CSR AI (scope caveat — important)\nFOLLOWUPS: How do approvals work in the Booking Agent? | What is Bogusław AI? | What did you do at Neurosphere?`
+        const canned = `Most of my agentic work centers on the **AI Booking Agent** at Housecall Pro: it reviews a business's Online Booking setup, finds gaps, and proposes improvements ranked by impact — with the user approving each change before anything is applied. I also worked on the configuration surfaces around CSR AI.\n\nPROJECTS: booking-agent, csr-ai\nSOURCES: AI Booking Agent (Housecall Pro) | CSR AI (scope caveat — important)\nFOLLOWUPS: How do approvals work in the Booking Agent? | What did you do at Neurosphere?`
         for (const chunk of canned.split(/(?<= )/)) {
           writer.write({ type: 'text-delta', id: textId, delta: chunk })
           await new Promise((resolve) => setTimeout(resolve, 12))

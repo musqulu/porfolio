@@ -105,7 +105,7 @@ function parseAgentMessage(raw: string, streaming: boolean): ParsedMessage {
     body: bodyLines.join('\n'),
     projectIds,
     sources: sources.slice(0, 3),
-    followups: followups.slice(0, 3),
+    followups: followups.slice(0, 2),
   }
 }
 
@@ -205,55 +205,35 @@ function StatusLine() {
   }, [step, reducedMotion])
 
   return (
-    <div aria-live="polite" className="space-y-1.5">
-      {THINKING_STEPS.map((label, index) => {
-        const active = index === step
-        const done = index < step
-        if (reducedMotion && index > 0) return null
-        return (
-          <p
-            key={label}
-            className={clsx(
-              'flex items-center gap-2 font-mono text-xs transition-colors',
-              active
-                ? 'text-zinc-500 dark:text-zinc-400'
-                : done
-                  ? 'text-zinc-400/70 dark:text-zinc-500/70'
-                  : 'text-zinc-300 dark:text-zinc-600'
-            )}
-          >
-            <span aria-hidden="true">
-              {done ? '✓' : active ? '▍' : '·'}
-            </span>
-            <span
-              className={clsx(
-                active &&
-                  !reducedMotion &&
-                  'animate-pulse motion-reduce:animate-none'
-              )}
-            >
-              {reducedMotion ? 'Thinking…' : `${label}…`}
-            </span>
-          </p>
-        )
-      })}
-    </div>
+    <p
+      aria-live="polite"
+      className="flex items-center gap-2 font-mono text-xs text-zinc-500 dark:text-zinc-400"
+    >
+      <span
+        aria-hidden="true"
+        className={clsx(!reducedMotion && 'animate-pulse motion-reduce:animate-none')}
+      >
+        ▍
+      </span>
+      {reducedMotion ? (
+        <span>Thinking…</span>
+      ) : (
+        <span
+          key={step}
+          className="animate-fade-up motion-reduce:animate-none"
+        >
+          {THINKING_STEPS[step]}…
+        </span>
+      )}
+    </p>
   )
 }
 
 function SourcesLine({ topics }: { topics: string[] }) {
   if (topics.length === 0) return null
   return (
-    <p className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1.5 text-xs text-zinc-400 dark:text-zinc-500">
-      <span className="text-zinc-400 dark:text-zinc-500">Based on</span>
-      {topics.map((topic) => (
-        <span
-          key={topic}
-          className="rounded-full border border-zinc-200 px-2 py-0.5 text-zinc-500 dark:border-zinc-700 dark:text-zinc-400"
-        >
-          {topic}
-        </span>
-      ))}
+    <p className="mt-4 text-xs text-zinc-400 dark:text-zinc-500">
+      Based on {topics.join(', ')}
     </p>
   )
 }
@@ -280,6 +260,8 @@ function RelatedLinks({ items }: { items: Project[] }) {
           <Link
             key={project.id}
             href={project.href!}
+            target="_blank"
+            rel="noreferrer"
             className="flex items-center font-medium text-red-400 hover:text-red-500"
           >
             {project.shortTitle ?? project.title}
