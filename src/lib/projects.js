@@ -1,4 +1,5 @@
 import {
+  CalendarDaysIcon,
   CameraIcon,
   ChartBarSquareIcon,
   BookOpenIcon,
@@ -33,27 +34,44 @@ const boguslawAi = {
   icon: BookOpenIcon,
 }
 
+const aiBookingAgent = {
+  name: 'AI Booking Agent',
+  description:
+    'Agentic workflow design — an AI assistant that diagnoses booking setup, recommends changes, and guides pros through human-in-the-loop approvals.',
+  link: {
+    href: '/studies/housecall-pro/ai-booking-agent',
+    label: 'View case study',
+  },
+  internal: true,
+  logo: logoHousecallpro,
+}
+
+// Case studies nested under the Housecall Pro overview page.
+export const housecallProjects = [
+  {
+    name: 'Online Booking',
+    description:
+      'A three-year product story — from a rigid booking widget to a conversion-tuned flow, across pro-facing setup and homeowner-facing booking.',
+    link: {
+      href: '/studies/housecall-pro/online-booking',
+      label: 'View case study',
+    },
+    internal: true,
+    icon: CalendarDaysIcon,
+  },
+  aiBookingAgent,
+]
+
 export const selectedWork = [
   {
     name: 'Housecall Pro',
     description:
       'Simplifying revenue and operational workflows across CSR AI, automations, online booking, pipeline, and leads for home service businesses.',
-    link: {
-      href: 'https://www.housecallpro.com/features/online-booking/',
-      label: 'housecallpro.com',
-      target: '_blank',
-    },
-    internal: false,
-    logo: logoHousecallpro,
-  },
-  {
-    name: 'HCP AI Booking agent',
-    description:
-      'Agentic workflow design — an AI assistant that diagnoses booking setup, recommends changes, and guides pros through human-in-the-loop approvals.',
-    link: { href: '/studies/online-booking', label: 'View case study' },
+    link: { href: '/studies/housecall-pro', label: 'View work' },
     internal: true,
     logo: logoHousecallpro,
   },
+  aiBookingAgent,
   ramz,
   boguslawAi,
   {

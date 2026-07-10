@@ -98,14 +98,16 @@ The suggestions are grounded in real data: analysis of product data and of top-p
 
 Human-in-the-loop by default: nothing applies automatically. Every recommendation shows a clear summary of what would change on the live booking page. The agent proposes, the pro decides.
 
-There is a working interactive prototype with multiple scenarios (incomplete setups, misconfigured availability, weak descriptions) showing how the same logic surfaces different improvements. Case study: /studies/online-booking.`,
+There is a working interactive prototype with multiple scenarios (incomplete setups, misconfigured availability, weak descriptions) showing how the same logic surfaces different improvements. Case study: /studies/housecall-pro/ai-booking-agent.`,
   },
   {
     topic: 'Housecall Pro ecosystem',
     content: `
 Housecall Pro is a platform for home service businesses. Konrad has worked across its revenue and operations surfaces: Online Booking setup and conversion, map-based service areas, Lead Forms and intake flows, deposits and payments, the Pipeline invoice board redesign, an Automations redesign with custom flows, and CSR AI settings and integrations.
 
-Scale: Online Booking averaged 53k bookings per month in 2026. That is the only metric that may be cited.`,
+Konrad owned Online Booking design end to end for 3+ years, across the pro-facing setup and the homeowner-facing booking flow. A parent overview lives at /studies/housecall-pro, with individual case studies for Online Booking (/studies/housecall-pro/online-booking) and the AI Booking Agent (/studies/housecall-pro/ai-booking-agent).
+
+Scale: Online Booking runs ~18k bookings per week (~70k+ per month) in 2026, and reported homeowner end-to-end conversion roughly tripled in H1 2026 (~6% to ~19%) after finding and filtering out bot traffic that had been masking the real rate (the lift came from a data-quality fix, not from a single redesign). Those are the only metrics that may be cited.`,
   },
   {
     topic: 'CSR AI (scope caveat — important)',

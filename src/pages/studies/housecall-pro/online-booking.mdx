@@ -1,0 +1,213 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { CaseStudyPrototypeCard } from '@/components/CaseStudyPrototypeCard'
+import { ExpandableImage } from '@/components/ExpandableImage'
+import { ImpactSnapshot, PrincipleGrid } from '@/components/ImpactSnapshot'
+import { FlowDiagram } from '@/components/FlowDiagram'
+import prototypeScreenshot from '@/images/case-studies/hcp-ai-booking-agent.png'
+import oldOlb from '@/images/case-studies/hcp-olb-old.png'
+import homeownerFlow from '@/images/case-studies/hcp-olb-homeowner-flow.png'
+import settingsOverview from '@/images/case-studies/hcp-olb-settings-overview.png'
+import chartConversion from '@/images/case-studies/hcp-olb-chart-conversion.png'
+import chartBookings from '@/images/case-studies/hcp-olb-chart-bookings.png'
+
+export const meta = {
+  author: 'Konrad Galan',
+  date: '2026-06-30',
+  title: 'Online Booking: from dated widget to AI-assisted revenue system',
+  subtitle:
+    'A multi-year product story about rebuilding Housecall Pro Online Booking from a slow, non-responsive tool into a scalable booking system, then evolving it through research, activation, optimization, and AI-assisted setup.',
+  description:
+    'How Housecall Pro Online Booking evolved from a slow, non-responsive widget into a scalable revenue system and a foundation for AI-assisted setup.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+**Role:** Product Designer → Senior Product Designer · **Company:** Housecall Pro (field-service SaaS) · **Timespan:** 2022 to present
+
+**Domain:** Online Booking for home service businesses, across the Pro configuring it and the homeowner booking through it.
+
+## TL;DR
+
+- **What it is:** A 24/7 booking channel that connects a business's setup with the homeowner experience.
+- **What changed:** We replaced a slow, non-responsive product with a faster, fully responsive system, then expanded its settings, onboarding, payments, lead intake, discovery, and optimization.
+- **Why it matters:** Receiving a first booking within 30 days correlates with stronger customer retention, making setup and activation part of the revenue model.
+- **My role:** I worked across both sides of the system, moving from hands-on flow design to research-led product decisions, shared patterns, data analysis, and AI-assisted setup.
+
+<ImpactSnapshot
+  intro="A few signals from the product's scale, measurement work, and roadmap impact."
+  metrics={[
+    {
+      metric: '18k/week',
+      label: 'Bookings and estimates through Online Booking',
+    },
+    {
+      metric: '~70k+/month',
+      label: 'Monthly booking volume',
+    },
+    {
+      metric: '6% → 19%',
+      label:
+        'Corrected homeowner conversion baseline after filtering bot traffic',
+    },
+    {
+      metric: '4+ years',
+      label:
+        'Designing Online Booking end to end across Pro setup and homeowner booking',
+    },
+  ]}
+/>
+
+## Product evolution
+
+### 2022 to 2023: Rebuild and foundations
+
+When I joined, Online Booking was slow, non-responsive, missing key capabilities, and difficult for Pros to configure. We had extensive feedback but needed a clear direction.
+
+I combined Pro research, session replays, and a review of the booking market to help define a replacement. We rebuilt the product from scratch and gradually retired the old version.
+
+My work covered the responsive homeowner flow, Pro setup, onboarding, and smaller high-leverage fixes. One replay showed Pros missing the live preview, so we made it visible and clearly labelled by default.
+
+<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+  <ExpandableImage
+    src={oldOlb}
+    alt="Legacy Online Booking desktop experience with a dense service grid and limited mobile support"
+    width={oldOlb.width}
+    height={oldOlb.height}
+    images={[oldOlb, homeownerFlow]}
+    currentIndex={0}
+  />
+  <ExpandableImage
+    src={homeownerFlow}
+    alt="Redesigned responsive homeowner booking flow with clear service categories"
+    width={homeownerFlow.width}
+    height={homeownerFlow.height}
+    images={[oldOlb, homeownerFlow]}
+    currentIndex={1}
+  />
+</div>
+
+The result was a faster, fully responsive foundation that the team could extend without working around the constraints of the original product.
+
+### 2024: Research-led expansion
+
+Once the foundation was stable, the challenge shifted from rebuilding to deciding what belonged on the roadmap.
+
+I ran surveys and interviews to test demand and understand tradeoffs:
+
+- Contacted around **200 Pros** to get about **30 quality responses** defining what makes a useful lead.
+- Researched card-on-file, deposits, and no-payment flows, finding that fewer no-shows could come at the cost of conversion.
+- Validated coupons as a highly requested capability.
+- Partnered with Payments and other teams to integrate shared capabilities without fragmenting the booking experience.
+
+This work moved my role from receiving feature briefs to helping create them with evidence.
+
+### 2025: Systemization and discovery
+
+As Online Booking expanded, point solutions made settings harder to navigate and maintain. Some Pros also missed the feature entirely.
+
+I redesigned settings around a new data architecture and a reusable card-based pattern. I also explored recommendations, predefined services, and smart defaults to reduce setup effort.
+
+<ExpandableImage
+  src={settingsOverview}
+  alt="Rebuilt Online Booking settings with card-based sections for preview, pricing, payments, and booking flow"
+  width={settingsOverview.width}
+  height={settingsOverview.height}
+  images={[settingsOverview]}
+  currentIndex={0}
+  compact
+/>
+
+Working with Design Systems, Payments, and other teams, I created shared components and contextual entry points across Customers, Leads, and Jobs. The goal was a coherent system, not another set of isolated screens.
+
+### 2026: Activation, optimization, and AI
+
+The current focus is activation: helping more organizations configure Online Booking and receive a first job within 30 days.
+
+I conducted a competitive teardown and ran A/B tests across categories, contact collection, and service details. Most tests moved conversion very little. Instead of forcing a design success story, we questioned the measurement.
+
+We found that bot traffic was inflating the funnel denominator. Filtering it out changed the reported conversion baseline from roughly 6% to 19%. The useful outcome was a more accurate baseline for future experiments.
+
+In parallel, I explored two ways to move beyond conventional funnel optimization:
+
+<CaseStudyPrototypeCard
+  href="https://agentic-onboarding-one.vercel.app/?variant=v4"
+  image={prototypeScreenshot}
+  imageAlt="HCP AI booking agent showing a high-impact scheduling type recommendation with accept and decline actions"
+  description="A dynamic prototype with multiple scenarios. See how the recommendation system responds to different booking configurations."
+/>
+
+[Read the AI Booking Agent case study →](/studies/housecall-pro/ai-booking-agent)
+
+- **AI-assisted setup:** I analyzed **1,500+ customer-feedback snippets** to define recommendations across booking hours, services, deposits, and arrival-window length. The core insight was that configuration, not a lack of features, is often the bottleneck.
+- **Book other service:** I designed a path that routes unmatched demand as a lead instead of ending the homeowner journey.
+
+<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+  <ExpandableImage
+    src={chartConversion}
+    alt="Homeowner conversion, H1 2026: ~6% to ~19% after filtering bot traffic"
+    width={chartConversion.width}
+    height={chartConversion.height}
+    images={[chartConversion, chartBookings]}
+    currentIndex={0}
+  />
+  <ExpandableImage
+    src={chartBookings}
+    alt="Weekly bookings via Online Booking"
+    width={chartBookings.width}
+    height={chartBookings.height}
+    images={[chartConversion, chartBookings]}
+    currentIndex={1}
+  />
+</div>
+
+## Why this matters for AI agent work
+
+Online Booking is not one flow. It is a connected system of decisions across services, availability, payments, service areas, lead intake, booking rules, and conversion.
+
+That complexity made it a natural foundation for AI-assisted setup. An assistant can inspect a business's configuration, identify gaps, explain tradeoffs, and recommend changes. The Pro remains in control, reviewing and approving each action before anything changes.
+
+<FlowDiagram
+  steps={[
+    'Current setup',
+    'Detect gaps',
+    'Explain tradeoffs',
+    'Recommend changes',
+    'Pro reviews',
+    'Apply approved updates',
+  ]}
+  caption="The agentic opportunity: help Pros understand and improve their setup while keeping consequential decisions human-controlled."
+/>
+
+This is the kind of agentic workflow I am interested in designing: AI operating inside a real product system, using domain context to reduce complexity while keeping consequential decisions understandable and human-controlled.
+
+## How I work
+
+<PrincipleGrid
+  principles={[
+    {
+      title: 'Observe behavior',
+      description: 'Session replays reveal real friction.',
+    },
+    {
+      title: 'Talk to users',
+      description: 'Research shaped roadmap decisions.',
+    },
+    {
+      title: 'Design systems',
+      description: 'Shared patterns scale better than isolated screens.',
+    },
+    {
+      title: 'Question metrics',
+      description: 'A polished experiment is useless if the baseline is wrong.',
+    },
+    {
+      title: 'Use AI for decisions',
+      description:
+        'Help people configure the right system, not just add more features.',
+    },
+  ]}
+/>
+
+## External sharing note
+
+<sub>Metrics sourced from production analytics (Amplitude): homeowner conversion funnel and weekly bookings, H1 2026. Charts rebuilt from the underlying data. Design frames are my own work; teammate, customer, and business-specific identifiers have been removed for external sharing.</sub>

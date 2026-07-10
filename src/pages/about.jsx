@@ -70,7 +70,7 @@ export default function About() {
                 I&apos;m a Senior Product Designer working across product strategy, interaction design, visual craft, and prototyping. I&apos;m interested in AI agents, complex workflows, and experimental interfaces, especially how people can better understand, trust, and collaborate with technology.
               </p>
               <p>
-                At Housecall Pro, I work across CSR AI, Automations, Online Booking, Booking Agent, Pipeline, and Leads, helping simplify complex revenue and operational workflows for home service businesses. My work supports an Online Booking product handling an average of 53k bookings per month.
+                At Housecall Pro, I work across CSR AI, Automations, Online Booking, Booking Agent, Pipeline, and Leads, helping simplify complex revenue and operational workflows for home service businesses. My work supports an Online Booking product handling around 18k bookings per week (70k+ per month).
               </p>
               <p>
                 I enjoy working closely with engineers, product managers, and other designers. I&apos;m comfortable working with code, building prototypes, and turning ambiguous ideas into clear product experiences.

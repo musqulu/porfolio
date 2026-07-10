@@ -39,7 +39,7 @@ export const projects: Project[] = [
       'Gives users approval before applying changes',
       'Connects recommendations to existing booking settings',
     ],
-    href: '/studies/online-booking',
+    href: '/studies/housecall-pro/ai-booking-agent',
   },
   {
     id: 'housecall-pro',
@@ -58,7 +58,8 @@ export const projects: Project[] = [
       'complex systems',
     ],
     evidence: [
-      'Online Booking setup and conversion work',
+      'Online Booking owned end to end for 3+ years (pro setup and homeowner flow)',
+      'Reported homeowner conversion roughly tripled in H1 2026 (~6% to ~19%) after finding and filtering out bot traffic that had been masking the real rate',
       'Map-based service areas',
       'Lead Forms and intake flows',
       'Deposits and payments',
@@ -66,9 +67,8 @@ export const projects: Project[] = [
       'Automation redesign with custom flows',
       'CSR AI settings and integrations',
     ],
-    metric: 'Average 53k bookings per month in 2026',
-    href: 'https://www.housecallpro.com/features/online-booking/',
-    external: true,
+    metric: '~18k bookings per week (~70k+ per month) in 2026',
+    href: '/studies/housecall-pro',
   },
   {
     id: 'csr-ai',

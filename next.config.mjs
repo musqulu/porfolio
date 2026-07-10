@@ -25,6 +25,11 @@ const nextConfig = {
         destination: '/portfolio-agent',
         permanent: true,
       },
+      {
+        source: '/studies/online-booking',
+        destination: '/studies/housecall-pro/ai-booking-agent',
+        permanent: true,
+      },
     ]
   },
 }

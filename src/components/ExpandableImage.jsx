@@ -1,25 +1,32 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
-export function ExpandableImage({ src, alt, width, height, images, currentIndex }) {
+export function ExpandableImage({
+  src,
+  alt,
+  width,
+  height,
+  images,
+  currentIndex,
+  compact = false,
+  previewMaxHeight = 320,
+}) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [activeIndex, setActiveIndex] = useState(currentIndex)
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
   const [isMobile, setIsMobile] = useState(false)
 
-  // Minimum swipe distance (in px) to trigger navigation
   const minSwipeDistance = 50
 
   useEffect(() => {
-    // Check if device is mobile on mount and window resize
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768)
     }
-    
+
     checkMobile()
     window.addEventListener('resize', checkMobile)
-    
+
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
@@ -75,7 +82,7 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
 
   const onTouchEnd = () => {
     if (!isMobile || !touchStart || !touchEnd) return
-    
+
     const distance = touchStart - touchEnd
     const isLeftSwipe = distance > minSwipeDistance
     const isRightSwipe = distance < -minSwipeDistance
@@ -88,42 +95,77 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
     }
   }
 
+  const openExpanded = () => {
+    setActiveIndex(currentIndex)
+    setIsExpanded(true)
+  }
+
+  const previewImage = (
+    <Image
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      unoptimized={compact}
+      quality={compact ? 100 : undefined}
+      className={
+        compact
+          ? 'no-rounded mx-auto max-h-full w-auto max-w-full object-contain'
+          : 'no-rounded cursor-pointer'
+      }
+      style={compact ? { maxHeight: previewMaxHeight } : undefined}
+      onClick={compact ? undefined : openExpanded}
+    />
+  )
+
   return (
     <>
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        className="no-rounded cursor-pointer"
-        onClick={() => setIsExpanded(true)}
-      />
+      {compact ? (
+        <button
+          type="button"
+          onClick={openExpanded}
+          className="group relative block w-full cursor-pointer overflow-hidden rounded-2xl border border-zinc-100 bg-zinc-50/50 p-4 text-left transition hover:border-zinc-200 dark:border-zinc-700/40 dark:bg-zinc-800/30 dark:hover:border-zinc-600/60"
+          aria-label={`Expand image: ${alt}`}
+        >
+          <div
+            className="flex items-center justify-center"
+            style={{ maxHeight: previewMaxHeight }}
+          >
+            {previewImage}
+          </div>
+          <p className="mt-3 text-center text-xs font-medium text-zinc-500 transition group-hover:text-zinc-700 dark:text-zinc-400 dark:group-hover:text-zinc-300">
+            Click to expand
+          </p>
+        </button>
+      ) : (
+        previewImage
+      )}
       {isExpanded && (
         <div
-          className="fixed inset-0 bg-zinc-900 flex items-center justify-center z-50 h-screen w-screen overflow-hidden touch-none"
+          className="fixed inset-0 z-50 flex h-screen w-screen touch-none items-center justify-center overflow-hidden bg-zinc-900"
           onClick={() => setIsExpanded(false)}
           style={{ margin: 0, padding: 0 }}
         >
-          <div className="hidden md:block absolute bottom-4 left-4 text-white/50 text-xs">
+          <div className="absolute bottom-4 left-4 hidden text-xs text-white/50 md:block">
             Use ← → arrows to navigate • ESC to close
           </div>
 
-          <div className="md:hidden absolute bottom-4 left-4 text-white/50 text-xs">
+          <div className="absolute bottom-4 left-4 text-xs text-white/50 md:hidden">
             Swipe left/right to navigate • Tap to close
           </div>
 
           <button
-            className="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition-colors z-50"
+            className="absolute right-4 top-4 z-50 text-3xl text-white transition-colors hover:text-gray-300"
             onClick={() => setIsExpanded(false)}
             aria-label="Close preview"
           >
             ×
           </button>
-          
-          {!isMobile && (
+
+          {!isMobile && images.length > 1 && (
             <>
               <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white text-3xl hover:text-gray-300 transition-colors z-50 p-4"
+                className="absolute left-4 top-1/2 z-50 -translate-y-1/2 p-4 text-3xl text-white transition-colors hover:text-gray-300"
                 onClick={handlePrevious}
                 aria-label="Previous image"
               >
@@ -131,7 +173,7 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
               </button>
 
               <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white text-3xl hover:text-gray-300 transition-colors z-50 p-4"
+                className="absolute right-4 top-1/2 z-50 -translate-y-1/2 p-4 text-3xl text-white transition-colors hover:text-gray-300"
                 onClick={handleNext}
                 aria-label="Next image"
               >
@@ -140,8 +182,8 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
             </>
           )}
 
-          <div 
-            className="relative w-[calc(100vw-2rem)] h-[calc(100vh-2rem)] flex items-center justify-center"
+          <div
+            className="relative flex h-[calc(100vh-2rem)] w-[calc(100vw-2rem)] items-center justify-center"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
@@ -163,5 +205,3 @@ export function ExpandableImage({ src, alt, width, height, images, currentIndex 
     </>
   )
 }
-
-
