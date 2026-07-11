@@ -1,0 +1,214 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import { ExpandableImage } from '@/components/ExpandableImage'
+import { ImpactSnapshot } from '@/components/ImpactSnapshot'
+import automationsRedesign from '@/images/case-studies/automations-redesign.jpg'
+import automationRuleBuilder from '@/images/case-studies/hcp-automation-rule-builder.jpg'
+import pipelineInvoicesBoard from '@/images/case-studies/hcp-pipeline-invoices-board.jpg'
+import powerUserInterview from '@/images/case-studies/hcp-pipeline-power-user-interview.jpg'
+import orchestrationModel from '@/images/case-studies/orchestration-model.svg'
+
+export const meta = {
+  author: 'Konrad Galan',
+  date: '2026-07-10',
+  title: 'Pipeline & Automations: from board-coupled rules toward orchestration',
+  subtitle:
+    'Power-user research that reframed Pipeline from a Kanban board into a control system, then shaped a redesigned Automations experience and a longer-term direction toward orchestration.',
+  description:
+    'How power-user research at Housecall Pro opened up board-coupled automations into clearer, more flexible workflow tools while shaping a longer-term orchestration direction.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+**Role:** Senior Product Designer, research, product direction & design · **Company:** Housecall Pro (field-service SaaS) · **Timespan:** 2025 to 2026
+
+**Domain:** Pipeline & Automations, the workspace where a home-services business moves work from lead to estimate to job, with automated follow-ups along the way.
+
+> I led the research that reframed how we thought about Pipeline. Our most valuable customers weren't using the board as a board. They were using it as a control system. That insight shaped a redesigned Automations experience and a longer-term direction toward orchestration, while the shipped work focused on opening up the existing system.
+
+## TL;DR
+
+- **What it is:** Pipeline is a visual board for tracking leads, estimates, jobs, and invoices. Attached to it are **automations**, rules that follow up with customers automatically, update statuses, and keep work moving.
+- **What changed:** the direction shifted from simply customizing the board to opening up Automations as a more flexible, human-readable system: custom automations, editable defaults, custom-board support, clearer rules, and a longer-term path toward event-driven orchestration across the product.
+- **What shipped:** we redesigned the Automations surface, made rules easier to read, allowed users to create custom automations, supported custom-board automation, and made opinionated defaults easier to remove or disable.
+- **What became the direction:** a broader orchestration model across Pipeline, messaging, jobs, callbacks, and AI. That work was slowed by constraints, competing priorities, and the companywide shift toward agentic strategy.
+- **Why it matters:** the project clarified a bigger design question: which workflows should stay explicit and rule-based, and which should become agentic?
+
+<ExpandableImage
+  src={automationsRedesign}
+  alt="Redesigned Automations surface with grouped, human-readable rules"
+  width={automationsRedesign.width}
+  height={automationsRedesign.height}
+  images={[automationsRedesign, orchestrationModel]}
+  currentIndex={0}
+/>
+
+## Context & the problem
+*A board that quietly became critical infrastructure.*
+
+Pipeline is where service businesses move work forward: a lead comes in, becomes an estimate, becomes a scheduled job or invoice. To reduce manual follow-up, Pipeline had automations tied tightly to board mechanics: status changes, columns, and opinionated defaults.
+
+The problem was not just visual polish. Automation logic was **bolted to the board**. Rules were hard to understand, defaults could feel too opinionated, and the system assumed a fairly linear workflow. That was fine for simpler businesses, but it became brittle when a real operation had multiple teams, custom boards, different follow-up rules, or exceptions.
+
+<ExpandableImage
+  src={pipelineInvoicesBoard}
+  alt="Housecall Pro Pipeline invoice board with kanban columns for Unsent, Sent, Partially Paid, and Paid"
+  width={pipelineInvoicesBoard.width}
+  height={pipelineInvoicesBoard.height}
+  images={[pipelineInvoicesBoard]}
+  currentIndex={0}
+/>
+
+The tell: advanced customers were **turning defaults off**, working around the board, or rebuilding parts of their workflow in external tools like Zapier. They were not rejecting automation. They were asking for more control, more clarity, and a system that matched how their business actually operated.
+
+## My role
+
+I led discovery and research, synthesized it into a product direction, and designed the redesigned Automations experience. I partnered with product management, engineering, and adjacent product teams to separate what we could realistically improve in the existing system from the broader orchestration model we wanted to move toward.
+
+The reframe was important: this was not only a board customization problem. It was a question about where operational logic should live, how much control users need, and how predictable the system should feel.
+
+## Discovery & research
+*Stop adding knobs. Go understand how power users actually think.*
+
+I ran a structured program of **power-user interviews** (30-minute sessions with businesses running high volume through Pipeline), paired with **prototype-based usability testing** of new automation concepts, **voice-of-customer synthesis**, and **behavioral analysis** in our product analytics.
+
+<ExpandableImage
+  src={powerUserInterview}
+  alt="Power-user interview session over video call with a home-services business operator"
+  width={powerUserInterview.width}
+  height={powerUserInterview.height}
+  images={[powerUserInterview]}
+  currentIndex={0}
+/>
+
+I deliberately weighted toward power users. They are not edge cases here. They are the businesses scaling on the platform, and they hit the structural limits of a design before the broader base feels them.
+
+## What the research revealed
+
+**1. People use Pipeline as a logic surface, not just a board.** Customers described it as "what runs the whole company" and asked for more control over how work moved. They were not asking for a nicer Kanban board. They were asking for a way to express business logic.
+
+**2. Status-based triggers do not cover enough real work.** Automations were often keyed off statuses, but real workflows are driven by events, timing, customer context, and business-specific exceptions. When too much logic depends on board states, users have to bend their workflow to the tool.
+
+**3. Users need expressive conditions, especially exclusions.** The recurring ask was not raw power. It was *clarity*: the ability to say "if tag A **and not** tag B" and know exactly what will happen.
+
+**4. Opinionated defaults erode trust.** Automations that moved items without enough visibility made work feel like it disappeared. Once trust breaks, people disable the whole system, even when the underlying capability is valuable.
+
+**5. Automations point beyond Pipeline.** The workflows customers wanted often spanned Pipeline, messaging, callbacks, jobs, and AI. The shipped work did not fully become a product-wide orchestration layer, but the research made it clear that automations were part of a broader operational system.
+
+The behavioral data agreed. Automations were one of Pipeline's most-used capabilities, adopted by thousands of businesses, with estimate follow-ups as the dominant use case and 100k+ automated follow-ups sent monthly. This was not a niche request. It was a heavily-used system straining against its original design.
+
+## The design direction
+*Open up the system, then move toward orchestration.*
+
+<ExpandableImage
+  src={orchestrationModel}
+  alt="Reframing automations from board-coupled logic toward a broader orchestration model"
+  width={1120}
+  height={520}
+  images={[automationsRedesign, orchestrationModel]}
+  currentIndex={1}
+  compact
+/>
+
+The design direction had two layers.
+
+First, we needed to make the existing system better: clearer rules, custom automations, support for custom boards, and editable defaults. These were practical changes that could reduce friction without requiring a full rebuild.
+
+Second, the research shaped a longer-term direction: move Automations toward a more independent orchestration model with event-based triggers, richer conditions, and workflows that could eventually coordinate across Pipeline, messaging, jobs, callbacks, and AI.
+
+That broader direction mattered, but it did not fully ship. The honest story is that we opened up a board-coupled automation system and created a stronger foundation for where it could go next.
+
+### What shipped / moved forward
+
+- **Redesigned Automations surface** with clearer grouping by automation intent
+- **More human-readable automation rules** so users could understand what would happen before trusting it
+- **Ability to create custom automations** instead of relying only on fixed defaults
+- **Support for automating custom boards** so businesses could map rules to their own workflows
+- **Ability to remove or disable opinionated defaults** when they did not match the business
+- **A stronger foundation for event-based automation** by clarifying the primitives users needed
+
+### What became the longer-term direction
+
+- **Automations as a broader product-wide orchestration layer**
+- **Event-based triggers** beyond board status changes
+- **Richer conditions and exclusions** for more expressive workflows
+- **Cross-product workflows** across Pipeline, messaging, jobs, callbacks, and AI
+- **AI-assisted message composition and setup** to reduce configuration effort
+
+### What changed strategically
+
+As agentic product strategy entered the conversation, the question became whether traditional automations were still the right path, or whether we should move toward something more agentic.
+
+My view was that both are needed. Predictable workflows need explicit, rule-based automations because they are transparent, repeatable, and auditable. Agents are better for ambiguous, contextual, or judgment-heavy work. The design challenge is deciding where each model belongs and how they can work together without making the system feel unpredictable.
+
+## Decisions & tradeoffs
+
+**Reframing the ask.** The obvious request was "more customization in the board." The right response was harder to sell: *automations should be a platform, not a board setting.* Naming that early turned a scoping exercise into a strategy conversation.
+
+**Opening the existing system over waiting for a clean rebuild.** Automations were already coupled to Pipeline, so fully decoupling them would have been slow and risky. The better move was to open up the existing system: custom automations, custom-board support, editable defaults, and a clearer surface.
+
+**Readable rules over a power-user logic builder.** A node-based builder maximizes expressiveness but can alienate operators who just want to know what will happen. I made human-readable, sentence-style rules the default surface, expressive enough for the conditions users asked for and legible enough to trust.
+
+<ExpandableImage
+  src={automationRuleBuilder}
+  alt="Create new lead automation screen showing sentence-style trigger, conditions, message actions, and status update"
+  width={automationRuleBuilder.width}
+  height={automationRuleBuilder.height}
+  images={[automationRuleBuilder]}
+  currentIndex={0}
+/>
+
+**Direction over certainty.** The orchestration model was a strategic direction, not a complete shipped system. That distinction mattered because roadmap constraints, technical coupling, and competing priorities slowed the broader vision.
+
+**Rules and agents, not rules versus agents.** As agentic strategy became more central, it would have been easy to treat traditional automations as outdated. I did not see it that way. Routine operational work still benefits from explicit rules. Agents are better when the work requires interpretation, judgment, or context.
+
+## The solution
+
+The redesigned experience opened up a previously rigid automation model. Instead of fixed defaults tied tightly to the board, users could create custom automations, automate custom boards, remove defaults, and read rules in a clearer, more human-readable structure.
+
+It did not fully turn Automations into a product-wide orchestration layer. It created a practical foundation and a stronger direction for getting there.
+
+The work also clarified a bigger product question: which workflows should stay explicit and rule-based, and which should become agentic?
+
+## Why this matters for AI agent work
+
+This work became more relevant as agentic product strategy entered the conversation. The question was no longer only "how do we make automations more flexible?" It became "which parts of operational work should remain explicit and rule-based, and which parts should become agentic?"
+
+My view was that both are needed. Traditional automations are valuable because they are predictable, transparent, and easy to audit. Agents are useful when the work is ambiguous, contextual, or requires judgment.
+
+The design challenge is deciding where each model belongs, how users understand what is happening, and how the system keeps enough control in the user's hands. That is the same trust problem at the center of human-in-the-loop AI: people need help, but they also need to know when the system will act, why it is acting, and how to stop or steer it.
+
+<ImpactSnapshot
+  intro="Signals from adoption, shipped improvements, and the roadmap conversation."
+  metrics={[
+    {
+      metric: 'Thousands',
+      label: 'Businesses using Pipeline automations',
+    },
+    {
+      metric: '100k+/month',
+      label: 'Automated follow-ups sent from Pipeline automations',
+    },
+    {
+      metric: 'Estimate follow-ups',
+      label: 'Dominant use case that focused the design direction',
+    },
+  ]}
+/>
+
+- Opened up Automations from fixed defaults toward custom, editable workflows.
+- Supported custom automations and custom-board automation.
+- Helped clarify the dominant use case: estimate follow-ups.
+- Reframed roadmap discussion from "more board settings" toward a broader automation and orchestration strategy.
+- Created a clearer position on how rule-based automations and AI agents should coexist.
+
+## Learnings
+
+**Research reframes requests into strategy.** Customers asked for more board control, but the deeper opportunity was to understand Pipeline as a control system.
+
+**Architecture is product strategy.** The way logic is coupled to a UI determines what the product can become. Coupling is not just an implementation detail. It shapes trust, flexibility, and roadmap options.
+
+**Predictability still matters in an agentic world.** AI agents can handle ambiguity, but routine operational workflows often need explicit rules because users need repeatability and auditability. The strongest product direction is not replacing automations with agents. It is designing where rules, agents, and human control each belong.
+
+**Constraints are part of the story.** The broader orchestration vision was slowed by technical coupling, competing priorities, and the shift toward agentic strategy. That did not make the work less useful. It made the shipped step more important: open up the system, make it clearer, and create a credible foundation for what comes next.
+
+<sub>Grounded in first-hand power-user research and prototype testing I ran, plus production analytics. Usage figures are generalized for external sharing; teammate, customer, and business-specific identifiers have been removed. Design frames are my own work.</sub>

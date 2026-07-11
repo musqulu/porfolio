@@ -46,6 +46,18 @@ const aiBookingAgent = {
   logo: logoHousecallpro,
 }
 
+const pipelineAutomations = {
+  name: 'Pipeline & Automations',
+  description:
+    'Power-user research that reframed automations from board settings into an event-driven orchestration layer with readable, trustworthy rules.',
+  link: {
+    href: '/studies/housecall-pro/pipeline-automations',
+    label: 'View case study',
+  },
+  internal: true,
+  icon: ChartBarSquareIcon,
+}
+
 // Case studies nested under the Housecall Pro overview page.
 export const housecallProjects = [
   {
@@ -59,6 +71,7 @@ export const housecallProjects = [
     internal: true,
     icon: CalendarDaysIcon,
   },
+  pipelineAutomations,
   aiBookingAgent,
 ]
 

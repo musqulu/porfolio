@@ -105,7 +105,7 @@ There is a working interactive prototype with multiple scenarios (incomplete set
     content: `
 Housecall Pro is a platform for home service businesses. Konrad has worked across its revenue and operations surfaces: Online Booking setup and conversion, map-based service areas, Lead Forms and intake flows, deposits and payments, the Pipeline invoice board redesign, an Automations redesign with custom flows, and CSR AI settings and integrations.
 
-Konrad owned Online Booking design end to end for 3+ years, across the pro-facing setup and the homeowner-facing booking flow. A parent overview lives at /studies/housecall-pro, with individual case studies for Online Booking (/studies/housecall-pro/online-booking) and the AI Booking Agent (/studies/housecall-pro/ai-booking-agent).
+Konrad owned Online Booking design end to end for 3+ years, across the pro-facing setup and the homeowner-facing booking flow. A parent overview lives at /studies/housecall-pro, with individual case studies for Online Booking (/studies/housecall-pro/online-booking), Pipeline & Automations (/studies/housecall-pro/pipeline-automations), and the AI Booking Agent (/studies/housecall-pro/ai-booking-agent).
 
 Scale: Online Booking runs ~18k bookings per week (~70k+ per month) in 2026, and reported homeowner end-to-end conversion roughly tripled in H1 2026 (~6% to ~19%) after finding and filtering out bot traffic that had been masking the real rate (the lift came from a data-quality fix, not from a single redesign). Those are the only metrics that may be cited.`,
   },
@@ -117,7 +117,11 @@ CSR AI is an AI customer-service agent inside Housecall Pro. Konrad did NOT desi
   {
     topic: 'Pipeline and Automations',
     content: `
-Redesigned operational workflow tools for home service businesses: a clearer Pipeline invoice board (information hierarchy for money moving through jobs) and more flexible custom automation flows built from triggers, conditions, and actions — users define behavior, the system executes it.`,
+Led power-user research that reframed how Housecall Pro thought about Pipeline. The most valuable customers were not using the board as a Kanban view. They were using it as a control system. That insight shifted the work from "add more board settings" toward opening up the existing Automations system: custom automations, editable defaults, custom-board automation, clearer human-readable rules, and a longer-term path toward orchestration.
+
+The broader product-wide orchestration layer did not fully ship. It became the strategic direction, then slowed because of constraints, competing priorities, and the shift toward agentic product strategy. The key design position: predictable workflows need explicit, auditable rule-based automations, while agents are better for ambiguous, contextual, judgment-heavy work.
+
+Automations are among Pipeline's most-adopted capabilities, with thousands of businesses sending 100k+ automated follow-ups a month and estimate follow-ups as the dominant use case. Case study: /studies/housecall-pro/pipeline-automations.`,
   },
   {
     topic: 'Lead Forms',
