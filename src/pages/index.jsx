@@ -250,7 +250,7 @@ export default function Home({ articles }) {
               href="/portfolio-agent"
               className="inline-flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20"
             >
-              Learn more about me
+              Chat about my work
             </Link>
           </div>
           <div className="mt-6 flex gap-6">

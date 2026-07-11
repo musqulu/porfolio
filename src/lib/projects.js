@@ -91,7 +91,7 @@ export const selectedWork = [
     name: 'Neurosphere',
     description:
       'Designed neurofeedback-based mindfulness products across mobile, web, brand, and hardware experiments, translating real-time EEG data into clear user feedback.',
-    link: { href: '/studies/neurosphere', label: 'View project' },
+    link: { href: '/studies/neurosphere', label: 'View case study' },
     internal: true,
     logo: logoNeurosphere,
   },
