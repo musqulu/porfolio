@@ -23,7 +23,7 @@ export function Footer() {
               <div className="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/about">About</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
+                <NavLink href="/projects">Lab</NavLink>
                 <NavLink href="/articles">Writing</NavLink>
                 <NavLink href="/photos">Photos</NavLink>
 

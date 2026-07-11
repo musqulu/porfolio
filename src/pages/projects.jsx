@@ -14,14 +14,14 @@ export default function Projects() {
   return (
     <>
       <Head>
-        <title>Projects - Konrad Galan</title>
+        <title>Lab - Konrad Galan</title>
         <meta
           name="description"
           content="Personal explorations and archived projects from Konrad Galan."
         />
       </Head>
       <SimpleLayout
-        title="A glimpse into my projects."
+        title="Lab, experiments & older projects"
         intro="Experiments, side projects, and older work I've built across product design, AI, and creative tooling."
       >
         <ProjectGrid projects={explorations} />

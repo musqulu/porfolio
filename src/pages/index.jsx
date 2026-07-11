@@ -142,7 +142,7 @@ function Resume() {
   let resume = [
     {
       company: 'Housecall Pro',
-      title: 'Product Designer',
+      title: 'Senior Product Designer',
       logo: logoHousecallpro,
       start: 'May 2022',
       end: {
@@ -238,11 +238,11 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-9xl mx-auto">
           <h1 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl lg:text-5xl">
-            Product designer for AI agents, complex workflows, and experimental interfaces.
+            Senior product designer for AI agents, complex workflows, and experimental interfaces.
           </h1>
           <div className="mt-6 space-y-4 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I design and prototype product experiences where humans collaborate with software, from online booking systems used by thousands of businesses to AI-powered tools, creative interfaces, and agentic workflows.
+              I design and prototype product experiences where humans collaborate with software, from online booking systems and automations used by thousands of businesses to AI-powered tools, creative interfaces, and agentic workflows.
             </p>
           </div>
           <div className="mt-6">

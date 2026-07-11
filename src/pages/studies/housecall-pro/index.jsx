@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 import { Container } from '@/components/Container'
+import { ImpactSnapshot } from '@/components/ImpactSnapshot'
 import { ProjectGrid } from '@/components/ProjectGrid'
 import { housecallProjects } from '@/lib/projects'
 
@@ -29,6 +30,39 @@ export default function HousecallProOverview() {
               {meta.subtitle}
             </p>
           </header>
+          <ImpactSnapshot
+            intro="A snapshot of the scale and scope of my work across Housecall Pro."
+            metrics={[
+              {
+                metric: '4+ years',
+                label:
+                  'Growing from Product Designer to Senior Product Designer with broader ownership across research, strategy, and systems design',
+              },
+              {
+                metric: '~18k/week',
+                label: 'Bookings and estimates through Online Booking',
+              },
+              {
+                metric: '100k+/month',
+                label: 'Automated follow-ups sent through Pipeline automations',
+              },
+              {
+                metric: '7+ product areas',
+                label:
+                  'Designed across online booking, leads, payments, service areas, pipeline, automations, and CSR AI settings',
+              },
+              {
+                metric: 'Research-led roadmap',
+                label:
+                  'Customer interviews, surveys, session replays, product analytics, and stakeholder reviews shaped product direction',
+              },
+              {
+                metric: 'Cross-team systems work',
+                label:
+                  'Partnered with PMs, engineers, data, design systems, payments, AI, and go-to-market teams',
+              },
+            ]}
+          />
           <div className="mt-8 space-y-4 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               At Housecall Pro I work across CSR AI, Automations, Online Booking,

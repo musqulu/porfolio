@@ -90,7 +90,7 @@ export const selectedWork = [
   {
     name: 'Neurosphere',
     description:
-      'Neurofeedback based meditation training for improved well-being.',
+      'Designed neurofeedback-based mindfulness products across mobile, web, brand, and hardware experiments, translating real-time EEG data into clear user feedback.',
     link: { href: '/studies/neurosphere', label: 'View project' },
     internal: true,
     logo: logoNeurosphere,
