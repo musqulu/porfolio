@@ -15,7 +15,7 @@ import logoNeurosphere from '@/images/logos/neurosphere.svg'
 const ramz = {
   name: 'Ramz',
   description:
-    'Analyzes an interface, captures what makes it work, and turns it into clear design guidance for AI agents.',
+    'Hermes-native open-source design skill that analyzes an interface, captures what makes it work, and turns it into clear design guidance for AI agents.',
   link: {
     href: 'https://github.com/musqulu/ramz-design-skill',
     label: 'github.com/musqulu/ramz-design-skill',
